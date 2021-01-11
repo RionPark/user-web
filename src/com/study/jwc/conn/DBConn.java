@@ -2,6 +2,7 @@ package com.study.jwc.conn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -46,7 +47,16 @@ public class DBConn {
 				e.printStackTrace();
 			}
 		}
-		
+	}
+
+	public static void close(PreparedStatement ps) {
+		if(ps!=null) {
+			try {
+				ps.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	public static void close(ResultSet rs) {
 		if(rs!=null) {
@@ -65,6 +75,12 @@ public class DBConn {
 	public static void close(Connection con, Statement st, ResultSet rs) {
 		close(rs);
 		close(st);
+		close(con);
+	}
+
+	public static void close(Connection con, PreparedStatement ps, ResultSet rs) {
+		close(rs);
+		close(ps);
 		close(con);
 	}
 	public static void commit(Connection con) {
