@@ -77,7 +77,10 @@ public class DBConn {
 		close(st);
 		close(con);
 	}
-
+	public static void close(Connection con, PreparedStatement ps) {
+		close(ps);
+		close(con);
+	}
 	public static void close(Connection con, PreparedStatement ps, ResultSet rs) {
 		close(rs);
 		close(ps);

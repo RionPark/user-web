@@ -18,6 +18,8 @@ request.setCharacterEncoding("utf-8");
 String uiId = request.getParameter("ui_id");
 String uiPwd = request.getParameter("ui_pwd");
 if(uiId!=null){
+	out.println("니 아이디 : " + uiId);
+	out.println("니 비밀번호 : " + uiPwd);
 	out.println(uiId + "님 이군요~");
 	Connection con = DBConn.getConn();
 	String sql = "select * from user_info where ui_id=? and ui_pwd=?";
