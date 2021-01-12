@@ -20,10 +20,18 @@ try{
 	ps.setString(1,fiNum);
 	rs = ps.executeQuery();
 	if(rs.next()){
+		out.println("<form method=\"post\" action=\"/food-update-ok.jsp\">");
 		out.println("메뉴명 : <input type=\"text\" name=\"fiName\" value=\"" + rs.getString("fi_name") + "\"><br>");
 		out.println("가격 : <input type=\"text\" name=\"fiPrice\" value=\"" + rs.getString("fi_price") + "\"><br>");
 		out.println("종류 : <input type=\"text\" name=\"fiType\" value=\"" + rs.getString("fi_type") + "\"><br>");
+		out.println("<input type=\"hidden\" name=\"fiNum\" value=\"" + rs.getString("fi_num") + "\">");
 		out.println("<button>수정</button>");
+		out.println("</form>");
+
+		out.println("<form method=\"post\" action=\"/food-delete-ok.jsp\">");
+		out.println("<input type=\"hidden\" name=\"fiNum\" value=\"" + rs.getString("fi_num") + "\">");
+		out.println("<button>삭제</button>");
+		out.println("</form>");
 	}
 }catch(Exception e){
 	e.printStackTrace();
