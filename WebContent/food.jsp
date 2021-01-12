@@ -29,7 +29,7 @@ try{
 	while(rs.next()){
 		String tag = "<tr>";
 		tag += "<td>" + rs.getString("fi_num") + "</td>";
-		tag += "<td>" + rs.getString("fi_name") + "</td>";
+		tag += "<td><a href=\"/food-update.jsp?fiNum=" + rs.getString("fi_num") + "\">" + rs.getString("fi_name") + "</a></td>";
 		tag += "<td>" + rs.getString("fi_price") + "</td>";
 		tag += "<td>" + rs.getString("fi_type") + "</td>";
 		tag += "<td>" + rs.getString("fi_credat") + "</td>";
@@ -54,6 +54,7 @@ try{
 		<a href="/food-insert.jsp">
 		위 2개는 결국 같은 의미이다.(서버를 localhost로 실행시켰을 경우)
 	 -->
-	<a href="/food-insert.jsp"><button>메뉴등록</button></a>
+	<a href="/food-insert.jsp"><button>POST메뉴등록</button></a>
+	<a href="/food-insert2.jsp"><button>GET메뉴등록</button></a>
 </body>
 </html>

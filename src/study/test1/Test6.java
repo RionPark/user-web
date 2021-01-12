@@ -3,9 +3,7 @@ package study.test1;
 public class Test6 {
 
 	public static void main(String[] args) {
-		String uiId = "';delete from user_info";
-		String sql = "select * from user_info where ui_id='" + uiId + "'";
-		
-		System.out.println(sql);
+		String novel = "그가 말했다.\r\n이세상엔 인생 치킨이 있어..\t 그중에 하나가 반반이지\"";
+		System.out.println(novel);
 	}
 }
