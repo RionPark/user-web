@@ -12,6 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+이거 내꺼야!!!<br>
+여따가 이상한거 하면 알제?<br>
 <%
 //스크립트릿 jsp 태그
 request.setCharacterEncoding("utf-8");
