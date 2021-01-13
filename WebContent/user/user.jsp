@@ -28,7 +28,7 @@
 		while (rs.next()) {
 			out.println("<tr>");
 			String str = "<td>" + rs.getString("ui_num") + "</td>";
-			str += "<td>" + rs.getString("ui_id") + "</td>";
+			str += "<td><a href=\"/user/user-update.jsp?uiNum=" + rs.getString("ui_num") + "\">" + rs.getString("ui_id") + "</a></td>";
 			str += "<td>" + rs.getString("ui_pwd") + "</td>";
 			str += "<td>" + rs.getString("ui_credat") + "</td>";
 			str += "<td>" + rs.getString("ui_cretim") + "</td>";
