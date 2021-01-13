@@ -42,8 +42,8 @@ try{
 		}else{
 			tag +="<td>"+rs.getString("ti_phone2")+"</td>";
 		}
-		tag +="<td>"+"<a href =\"/theater/theater-update.jsp?tiNum="+rs.getString("ti_num")+"\">"+"<button>수정</button>";
-		tag +="<td>"+"<a href =\"/theater/theater-delete.jsp?tiNum="+rs.getString("ti_num")+"\">"+"<button>삭제</button>";
+		tag +="<td>"+"<a href =\"/theater/theater-update.jsp?tiNum="+rs.getString("ti_num")+"\">"+"<button>수정</button></a></td>";
+		tag +="<td>"+"<a href =\"/theater/theater-delete.jsp?tiNum="+rs.getString("ti_num")+"\">"+"<button>삭제</button></a></td>";
 		tag +="</tr>";
 		out.println(tag);
 	}

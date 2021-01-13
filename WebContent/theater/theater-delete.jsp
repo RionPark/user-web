@@ -24,9 +24,9 @@ try{
 		out.println("<button>예</button>");
 		out.println("<input type=\'hidden\' name =\"tiNum\" value=\""+rs.getString("ti_num")+"\"<br>");
 		out.println("</form>");
-		out.println("<form method=\"post\" action =\"/theater/theater.jsp\">");
+		out.println("<a href=\"/theater/theater.jsp\">");
 		out.println("<button>아니오</button>");
-		out.println("</form>");
+		out.println("</a>");
 	}
 }catch(Exception e){
 	e.printStackTrace();
