@@ -14,28 +14,10 @@
 <form>
 영화관 : <select name="tiNum">
 	   		<option value="">선택</option>
-<%
-Connection con = DBConn.getConn();
-PreparedStatement ps = null;
-ResultSet rs = null;
-try{
-	String sql = "select * from theater_info";
-	ps = con.prepareStatement(sql);
-	rs = ps.executeQuery();
-	while(rs.next()){
-%>
-			<option value="<%=rs.getString("ti_num")%>">
-				<%=rs.getString("ti_name")%>
-			</option>
-<%
-	}
-}catch(Exception e){
-	e.printStackTrace();
-}finally{
-	DBConn.close(con,ps, rs);
-}
-%>
-	   </select>
+	   		<option value="1">CGV 상봉</option>
+	   		<option value="2" selected>CGV 김포</option>
+	   		<option value="3">CGV 여의도</option>
+	   	</select>
 </form>
 </body>
 </html>
