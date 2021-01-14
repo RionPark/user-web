@@ -36,6 +36,7 @@ try{
 }
 %>
 <form method="post" action="/park/park-update-ok.jsp">
+	<input type="hidden" name="tpNum" value="<%=tpNum%>">
 	주차장명 : <input type="text" name="tpName" value="<%=tpName%>"><br>
 	주차장주소 : <input type="text" name="tpAddress" value="<%=tpAddress%>"><br>
 	주차장전번 : <input type="text" name="tpPhone" value="<%=tpPhone%>"><br>
@@ -48,8 +49,12 @@ try{
 	ps = con.prepareStatement(sql);
 	rs = ps.executeQuery();
 	while(rs.next()){
+		String str = "";
+		if(rs.getString("ti_num").equals(tiNum)){
+			str = "selected";
+		}
 %>
-			<option value="<%=rs.getString("ti_num")%>">
+			<option value="<%=rs.getString("ti_num")%>" <%=str%>>
 				<%=rs.getString("ti_name")%>
 			</option>
 <%
@@ -61,7 +66,11 @@ try{
 }
 %>
 	   </select><br>
-	<button>주차장수정</button>
+	<button>주차장 수정</button>
+</form>
+<form method="post" action="/park/park-delete-ok.jsp">
+	<input type="hidden" name="tpNum" value="<%=tpNum%>">
+	<button>주차장 삭제</button>
 </form>
 </body>
 </html>
