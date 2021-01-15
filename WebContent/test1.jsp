@@ -17,13 +17,3 @@ out.println(str);
 <%=str%>
 안녕하슈~<br>
 </html>
-
-
-
-
-
-
-
-
-
-
