@@ -38,6 +38,9 @@ for(int i=0;i<foodList.size();i++){
 <%
 }
 %>
+	<tr>
+		<td colspan="6" align="right"><a href="/food/food-insert.jsp"><button>메뉴등록</button></a></td>
+	</tr>
 </table>
 
 </body>

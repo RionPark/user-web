@@ -32,6 +32,9 @@ for(int i=0;i<studentList.size();i++){
 <%
 }
 %>
+	<tr>
+		<td colspan="3" align="right"><a href="/student/student-insert.jsp"><button>등록</button></a></td>
+	</tr>
 </table>
 
 </body>

@@ -11,6 +11,26 @@ import java.util.Map;
 import com.study.jwc.conn.DBConn;
 
 public class StudentInfoDAO {
+	public int insertStudentInfo(Map<String,String> student) {
+		Connection con = DBConn.getConn();
+		PreparedStatement ps = null;
+		int cnt = 0;
+		try {
+			String sql = "insert into student_info(si_num, si_name, si_etc)";
+			sql += " values(seq_si_num.nextval,?,?)";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, student.get("siName"));
+			ps.setString(2, student.get("siEtc"));
+			cnt = ps.executeUpdate();
+			DBConn.commit(con);
+		}catch(Exception e) {
+			DBConn.rollback(con);
+			e.printStackTrace();
+		}finally {
+			DBConn.close(con,ps);
+		}
+		return cnt;
+	}
 	public List<Map<String,String>> selectStudentInfoList(){
 		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
 		Connection con = DBConn.getConn();
