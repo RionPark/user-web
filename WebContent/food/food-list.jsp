@@ -29,7 +29,7 @@ for(int i=0;i<foodList.size();i++){
 %>
 	<tr>
 		<td><%=menu.get("fi_num") %></td>
-		<td><%=menu.get("fi_name")%></td>
+		<td><a href="/food/food-update.jsp?fiNum=<%=menu.get("fi_num")%>"><%=menu.get("fi_name")%></a></td>
 		<td><%=menu.get("fi_price")%></td>
 		<td><%=menu.get("fi_type")%></td>
 		<td><%=menu.get("fi_credat")%></td>
